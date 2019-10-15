@@ -3,6 +3,7 @@ toys.py
 
 Simple toy functions to get comfortable working 
 with functions.
+poop
 '''
 
 
