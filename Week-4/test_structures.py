@@ -23,7 +23,7 @@ class TestSum(unittest.TestCase):
         result = st.first_and_last([0,1,2,3])
         self.assertEqual(result, [0,3])
 
-    def test_part_reverse(selff):
+    def test_part_reverse(self):
         '''
         Test
         '''
@@ -127,8 +127,8 @@ class TestSum(unittest.TestCase):
         '''
         Test
         '''
-        result = st.merge_dictionaries({"a": 1, "c": 3}, {"b:" 2, "d": 4})
-        self.assertEqual(result, {"a": 1, "c": 3, "b:" 2, "d": 4})
+        result = st.merge_dictionaries({"a": 1, "c": 3}, {"b": 2, "d": 4})
+        self.assertEqual(result, {"a": 1, "c": 3, "b": 2, "d": 4})
 
 
 
