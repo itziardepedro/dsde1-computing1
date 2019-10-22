@@ -32,13 +32,7 @@ def sum_inc(a,b):
 # boolean (True or False) for whether 
 # the input number is even
 def is_even(a):
-    a = input('choose a number')
-    even = False 
-    if a % 2: 
-        even = True 
-        return even 
-    else: 
-        return even
+    return(bool(a % 2 == 0))
 
 #question 6 
 # create for loop that takes a string
@@ -49,9 +43,9 @@ def is_even(a):
 # 'hohoho'
 def string_repeat(phrase, repeat):
     for i in range(repeat): 
-        print('ho')
+        concatenate = (i+1) * phrase
+    return concatenate
 
-    
+
     # hint: you can add strings together 
     # in order to concatenate them
-    return
