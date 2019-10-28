@@ -17,7 +17,8 @@ def merge_list(list1, list2):
 # Write a function that returns a list containing unique values from the input_list.
 # In other words, any repeated values are removed.
 def unique_values(input_list):
-    return
+    input_list = input_list(dict.fromkeys(input_list))
+    return input_list
 
 # Strings
 
