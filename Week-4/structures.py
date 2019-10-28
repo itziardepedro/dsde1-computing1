@@ -66,8 +66,6 @@ def palindrome_sentence(sentence):
 # sentence. 
 def concatenate_sentences(sentence1, sentence2):
 
-    sentence1 + sentence 2
-    concatenate_sentences[0].isupper()
     return 
 
 
