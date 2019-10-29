@@ -6,7 +6,7 @@ Implementation of the flowchart in question1.png.
 
 def flowchart(input_value):
     if input_value == 0: 
-        return 0
+        return 'zero'
     
     elif input_value > 0:
         if input_value % 2 == 0: 
@@ -19,4 +19,3 @@ def flowchart(input_value):
             return 'negative-even'
         elif input_value % 2 != 0:
             return 'negative-odd'
-
