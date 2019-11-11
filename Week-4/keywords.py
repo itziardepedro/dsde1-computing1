@@ -35,7 +35,7 @@ def list_avergae(input_list, avg_type = 'mean'):
         if input_list == []: 
             return 0
         else: 
-            return(sum.input) / len(input_list)
+            return(sum.input_list) / len(input_list)
     elif avg_type == 'mode':
         if input_list == []:
             mode_list = []
