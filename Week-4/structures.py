@@ -56,16 +56,15 @@ def palindrome_word(word):
 
 def palindrome_sentence(sentence):
     sentence = sentence.replace(' ','')
+    
     punctuations = '''!()-[]{};:'",<>./?@#$%^&*_~'''
-    for x in sentence.lower():
+    
+    for x in sentence:
         if x in punctuations: 
             sentence = sentence.replace(x,'')
     
     rev = sentence[::-1]
-    if rev.lower() == sentence.lower():
-        return True
-    else: 
-        return False 
+    return bool(rev.lower() == sentence.lower())
     
 
 # write a function that concatenates two sentences. First the function checks
@@ -80,11 +79,13 @@ def concatenate_sentences(sentence1, sentence2):
     sentence2 = sentence2.strip()
     other = ['.', '?', '!']
     
-    if sentence1[0].isupper() and sentence1[-1] in other: 
-        if sentence2[0].isupper() and sentence2[-1] in other: 
+    if (sentence1[0].isupper() == True) and (sentence1[-1] in other): 
+        if (sentence2[0].isupper() == True) and (sentence2[-1] in other): 
             return sentence1 + ' ' + sentence2
         else: 
-            return 'Does not meet the criteria'  
+            return
+    else: 
+        return 
 
 
 # Dictionaries
@@ -108,6 +109,5 @@ def value_exists(dictionary, value):
 # write a function that returns a new dictionary which contains all the values
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
-    newdict = {dictionary1, dictionary2}
-
+    newdict = {**dictionary1, **dictionary2}
     return newdict
