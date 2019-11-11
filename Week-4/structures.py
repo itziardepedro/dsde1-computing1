@@ -27,7 +27,7 @@ def part_reverse(the_list, beginning, end):
         return secondlist
     else:
         raise ValueError
-    
+
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
@@ -44,10 +44,8 @@ def repeat_at_index(the_list, index):
 # the same forward and backwards
 def palindrome_word(word):
     rev = word[::-1]
-    if word.lower() == rev.lower():
-        return True
-    else:
-        return False
+    return bool(word.lower() == rev.lower())
+
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
