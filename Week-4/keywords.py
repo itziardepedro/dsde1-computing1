@@ -8,15 +8,16 @@
 # if both user_name and place are provided
 # it returns 'Hello, <user_name>, and welcome to <place>
 
-def welcome_message(user_name = '', place = ''):
-    if user_name == '' and place == '':
+def welcome_message(user_name = None, place = None):
+    if user_name == None and place == None:
         print('Hello and welcome')
-    elif user_name != '': 
+    elif user_name != None: 
         print('Hello ' + user_name)
-    elif place != '': 
+    elif place != None: 
         print('Hello and welcome to' + place)
     else: 
         print('Hello ' + user_name + 'Welcome to ' + place)
+
 
 
 # Create a function called list_average()
@@ -35,7 +36,7 @@ def list_avergae(input_list, avg_type = 'mean'):
         if input_list == []: 
             return 0
         else: 
-            return(sum.input_list) / len(input_list)
+            return sum(input_list) / len(input_list)
     elif avg_type == 'mode':
         if input_list == []:
             mode_list = []
@@ -54,7 +55,7 @@ def list_avergae(input_list, avg_type = 'mean'):
         input_list.sort()
         if input_list == []:
             return None
-        elif len(input_list) % 2 !=0: 
+        elif len(input_list) %2 != 0: 
             median_index = len(input_list) // 2
         else: 
             median_index = (len(input_list) // 2) + 1
