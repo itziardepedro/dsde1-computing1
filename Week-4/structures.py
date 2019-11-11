@@ -7,9 +7,7 @@ Simple functions performing operations on basic Python data structures.
 # Lists
 
 # write a function that returns a list containig the first and the last element
-# of "the_list". 
-
-#the_list = ['orange', 'banana', 'apple']
+# of "the_list". the_list = ['orange', 'banana', 'apple']
 
 def first_and_last(the_list):
     return [the_list[0], the_list[-1]]
@@ -55,7 +53,7 @@ def palindrome_word(word):
 def palindrome_sentence(sentence):
     sentence = sentence.replace(' ','')
     
-    punctuations = '''!()-[]{};:'",<>./?@#$%^&*_~'''
+    punctuations = '!()-[]}{;:'",<>./?@#$%^&*_~'
     
     for x in sentence:
         if x in punctuations: 
