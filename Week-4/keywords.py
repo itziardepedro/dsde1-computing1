@@ -11,9 +11,9 @@
 def welcome_message(user_name = '', place = ''):
     if user_name == '' and place == '':
         print('Hello and welcome')
-    elif: user_name != '': 
+    elif user_name != '': 
         print('Hello ' + user_name)
-    elif: place != '': 
+    elif place != '': 
         print('Hello and welcome to' + place)
     else: 
         print('Hello ' + user_name + 'Welcome to ' + place)
@@ -21,8 +21,7 @@ def welcome_message(user_name = '', place = ''):
 
 # Create a function called list_average()
 # without using any libraries to do the maths for you 
-# (the point of this exercise is to practice interacting 
-# with lists)
+# (the point of this exercise is to practice interacting with lists)
 # the first argument is a list of numbers
 # the second optional keyword arguemt is called avg_type
 # if nothing for avg_type provided, return the mean of the list
@@ -30,3 +29,34 @@ def welcome_message(user_name = '', place = ''):
 # (return list of all modes if there is a tie between multiple values)
 # if avg_type='mean', return the mean of the list
 # if avg_type='median', return the median of this list
+
+def list_avergae(input_list, avg_type = 'mean'):
+    if avg_type == 'mean':
+        if input_list == []: 
+            return 0
+        else: 
+            return(sum.input) / len(input_list)
+    elif avg_type == 'mode':
+        if input_list == []:
+            mode_list = []
+        else: 
+            dict = {}
+            for n in input_list: 
+                keys = dict.keys()
+                if n in keys: 
+                    dict[n] += 1
+                else: 
+                    dict[n] = 1
+            max_value = max(dict.values())
+            mode_list = [i for i, v in dict.items() if v == max_value]
+        return mode_list
+    elif avg_type == 'median':
+        input_list.sort()
+        if input_list == []:
+            return None
+        elif len(input_list) % 2 !=0: 
+            median_index = len(input_list) // 2
+        else: 
+            median_index = (len(input_list) // 2) + 1
+        return input_list[median_index]
+        
