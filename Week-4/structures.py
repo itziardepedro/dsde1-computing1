@@ -79,8 +79,8 @@ def concatenate_sentences(sentence1, sentence2):
     sentence2 = sentence2.strip()
     other = ['.', '?', '!']
     
-    if (sentence1[0].isupper() == True) and (sentence1[-1] in other): 
-        if (sentence2[0].isupper() == True) and (sentence2[-1] in other): 
+    if (sentence1[0].isupper() == True) and (sentence2[0].isupper() == True):
+        if (sentence1[-1] in other) and (sentence2[-1] in other): 
             return sentence1 + ' ' + sentence2
         else: 
             return
