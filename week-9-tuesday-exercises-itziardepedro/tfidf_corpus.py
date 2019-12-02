@@ -1,11 +1,11 @@
 '''
 tfidf_corpus_solution.py
-
 Solution file for a TFIDFCorpus class for the TF-IDF exercise.
 '''
 
 import math
 import os
+import re
 import tf_document as tf
 
 class TFIDFCorpus:
@@ -15,26 +15,47 @@ class TFIDFCorpus:
         called idf.'''
 
         # save location in attribute
+        self.folder = folder 
+
         # get a list of all txt files in the folder
+        text_files = self.get_filenames()
+
         # create a TFDocument for each txt file
+        self.docs = self.create_documents(text_files)
+
         # create a dictionary with the (not yet normalised, log not taken) 
+        self.idf = self.compute_idf()
+
         # IDF value for each term that occurs in the corpus
 
+
         return
+
 
     def get_filenames(self):
         '''Returns a list of filenames whose extension is txt within
-        a the corpus's folder.'''
-
-        return
+        the corpus's folder.'''
+        list = []
+        for file in os.listdir(self.folder):
+            if file.endswith('.txt'): 
+                list.append(file)
+            else: 
+                continue
+        return list
     
+
     def create_documents(self, filenames):
         '''Create a dict of keys with the listed filenames relative 
         to the corpus folder and values of the TFDocument instance.'''
         # create empty dictionary
+        dictionary = dict()
         # instantiate a new TFDocument for each file in the dictionary
+        for f in filenames: 
+            cwd = os.getcwd()
+            path = str(cwd) + '/' + str(self.folder) + '/' + str(f)
+            dictionary[path] = 0
+        return dictionary 
 
-        return
     
     def compute_idf(self):
         '''Populate a dictionary stored in the instance attribute idf
@@ -47,9 +68,23 @@ class TFIDFCorpus:
         # add any additional terms not seen before other docs
         # increment the counts of terms seen before in other docs
         
-        # for each value, replace with total num of docs / count
+        dictionary = dict()
 
-        return
+        for document in self.docs: 
+            with open(document, 'r') as d: 
+                words = d.read().split()
+            
+                for word in words: 
+                    x = re.sub('[\W_]+', '', word)
+                    if x not in dictionary: 
+                        dictionary[x] = 0
+                    dictionary[x] += 1
+                
+        # for each value, replace with total num of docs / count
+        for key in dictionary:
+            dictionary[key] = len(self.docs)/dictionary[key]
+        
+        return dictionary
 
     def get_tfidf(self, filename, word):
         '''Return the TDIDF value of the given word in the given filename 

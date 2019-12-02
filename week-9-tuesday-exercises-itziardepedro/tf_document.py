@@ -14,7 +14,7 @@ class TFDocument:
         # save location in attribute
         # parse string and populate the tf attribute
 
-        g = self.read_line(location)
+        g = self.read_file(location)
         h = self.string_to_list(g)
         e = self.compute_tf(h)
         print(e)
@@ -73,4 +73,5 @@ class TFDocument:
     def get_tfidf(self, word, idf):
         '''Given a word and its IDF value, return the TFIDF value for 
         that word.'''
+        
         return 
