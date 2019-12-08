@@ -11,8 +11,7 @@ import tf_document as tf
 class TFIDFCorpus:
     def __init__(self, folder):
         '''Given a folder location, create a TFDocument for each
-        .txt file within the folder and populate an instance attribute
-        called idf.'''
+        .txt file within the folder and populate an instance attribute called idf.'''
 
         # save location in attribute
         self.folder = folder 
@@ -27,7 +26,6 @@ class TFIDFCorpus:
         self.idf = self.compute_idf()
 
         # IDF value for each term that occurs in the corpus
-
 
         return
 
