@@ -1,7 +1,5 @@
-'''
-tf_document_solution.py
-Solution file for TFDocument class of the TF-IDF exercise.
-'''
+'''tf_document_solution.py
+Solution file for TFDocument class of the TF-IDF exercise.'''
 
 import string
 import math
@@ -13,15 +11,11 @@ class TFDocument:
 
         # save location in attribute
         # parse string and populate the tf attribute
-
         g = self.read_file(location)
         h = self.string_to_list(g)
         e = self.compute_tf(h)
         print(e)
         self.tf = e
-
-        return
-
 
     def read_file(self, storage_string):
         '''Opens a text file at the given location and returns 
@@ -41,15 +35,12 @@ class TFDocument:
         punctuation such as "that's" will remain.'''
         # ensure everything is lowercase
         # split into words at whitespace
-        # remove any non-alpha characters at the beginning 
-        # or end of each word
+        # remove any non-alpha characters at the beginning or end of each word
         
         sentence = input_string.lower()
         for char in sentence:
             if char in input_string.punctuation:
                 sentence = sentence.replace(char, '')
-            else: 
-                continue
         
         list1 = sentence.split()
         return list1
@@ -71,7 +62,5 @@ class TFDocument:
         return dictionary
 
     def get_tfidf(self, word, idf):
-        '''Given a word and its IDF value, return the TFIDF value for 
-        that word.'''
-        
+        '''Given a word and its IDF value, return the TFIDF value for that word.'''
         return 

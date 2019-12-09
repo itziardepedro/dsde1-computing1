@@ -47,18 +47,18 @@ class Resistor:
         
         # 4-band value = <band1 band2> (each a digit) x 10^band3
         if self.num_bands == 4:
-            value = (colours[self.b1] * 10 + colours[self.b2]) * 10**colours[self.b3]
+            value = (Resistor.colours[self.b1] * 10 + Resistor.colours[self.b2]) * 10**Resistor.colours[self.b3]
         
         # 5-band value = <band1 band2 band3> (each a digit) x 10^band4
         if self.num_bands == 5:
-            value = (colours[self.b1] * 100 + colours[self.b2] * 10 + colours[self.b3]) * 10**colours[self.b4]
+            value = (Resistor.colours[self.b1] * 100 + Resistor.colours[self.b2] * 10 + Resistor.colours[self.b3]) * 10** Resistor.colours[self.b4]
        
         return value
     
     def min_value(self):
         '''Return the minimum value within the tolerance of the resistor value.'''
-        return self.value - self.value * (tol_colours(self.tolerance))
+        return self.value - self.value * (Resistor.tol_colours(self.tolerance))
     
     def max_value(self):
         '''Return the maximium value within the tolerance of the resistor value.'''
-        return self.value + self.value * (tol_colours(self.tolerance))
+        return self.value + self.value * (Resistor.tol_colours(self.tolerance))
