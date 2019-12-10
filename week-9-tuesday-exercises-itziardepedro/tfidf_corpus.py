@@ -1,11 +1,8 @@
-'''
-tfidf_corpus_solution.py
-Solution file for a TFIDFCorpus class for the TF-IDF exercise.
-'''
+'''tfidf_corpus_solution.py
+Solution file for a TFIDFCorpus class for the TF-IDF exercise.'''
 
 import math
 import os
-import re
 import tf_document as tf
 
 class TFIDFCorpus:

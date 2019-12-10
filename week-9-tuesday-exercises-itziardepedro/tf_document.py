@@ -17,6 +17,7 @@ class TFDocument:
         print(e)
         self.tf = e
 
+
     def read_file(self, storage_string):
         '''Opens a text file at the given location and returns 
         a string of its contents.'''
@@ -30,9 +31,8 @@ class TFDocument:
 
 
     def string_to_list(self, input_string):
-        '''Takes in a string and returns a list of strings with all
-        whitespace removed along with any edge punctuation. Inner 
-        punctuation such as "that's" will remain.'''
+        '''Takes in a string and returns a list of strings with all whitespace removed 
+        along with any edge punctuation. Inner punctuation such as "that's" will remain.'''
         # ensure everything is lowercase
         # split into words at whitespace
         # remove any non-alpha characters at the beginning or end of each word
